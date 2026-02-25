@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chili Crop</title>
+
+<style>
+/* SAME CSS AS MANGO */
+body{margin:0;font-family:Arial,sans-serif;background:#f4faf5;}
+.container{max-width:1300px;margin:auto;padding:20px;}
+h1{text-align:center;color:#2e7d32;margin-bottom:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;}
+.card{background:#fff;border-radius:12px;padding:15px;box-shadow:0 4px 10px rgba(0,0,0,.15);}
+.card h2{font-size:18px;color:#1b5e20;margin-bottom:8px;}
+.info{background:#e8f5e9;border-left:4px solid #2e7d32;padding:8px;border-radius:6px;margin-bottom:6px;font-size:14px;}
+select,input,button{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #ccc;font-size:14px;}
+button{background:#2e7d32;color:#fff;border:none;cursor:pointer;}
+button:hover{background:#1b5e20;}
+.output{display:none;background:#f1f8e9;padding:8px;border-radius:6px;margin-top:6px;font-size:14px;}
+.back{display:block;text-align:center;margin:20px auto;width:250px;background:#2e7d32;color:#fff;padding:10px;border-radius:8px;text-decoration:none;font-weight:bold;}
+.back:hover{background:#1b5e20;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>🌶️ Chili Crop Dashboard</h1>
+
+<div class="grid">
+
+<div class="card">
+<h2>📌 Growth & Water</h2>
+<div class="info"><b>Duration:</b> 120–150 days</div>
+<div class="info"><b>Water:</b> Light & frequent irrigation</div>
+</div>
+
+<div class="card">
+<h2>🌱 Fertilizer</h2>
+<select id="fert">
+<option value="">Select Type</option>
+<option value="org">Organic</option>
+<option value="inorg">Inorganic</option>
+</select>
+<div id="fertOut" class="output"></div>
+</div>
+
+<div class="card">
+<h2>🌦 Environment</h2>
+<select id="env">
+<option value="">Select Region</option>
+<option value="north">North India</option>
+<option value="south">South India</option>
+<option value="east">East India</option>
+<option value="west">West India</option>
+</select>
+<div id="envOut" class="output"></div>
+</div>
+
+<div class="card">
+<h2>💰 Market</h2>
+<select id="market">
+<option value="">Select</option>
+<option value="now">Current Rate</option>
+<option value="future">Future Price</option>
+</select>
+<div id="marketOut" class="output"></div>
+</div>
+
+<div class="card">
+<h2>📅 Growth Schedule</h2>
+<button onclick="defaultSchedule()">Generate</button>
+<div id="scheduleOut" class="output"></div>
+</div>
+
+<div class="card">
+<h2>⏰ Custom Reminder</h2>
+<input id="stage" placeholder="Stage Name">
+<input id="time" placeholder="Duration">
+<input type="datetime-local" id="alarm">
+<button onclick="setAlarm()">Add Reminder</button>
+</div>
+
+</div>
+
+<a href="index.html" class="back">⬅ Back To Black Soil</a>
+</div>
+
+<script>
+fert.onchange=()=>{
+ fertOut.style.display="block";
+ fertOut.innerHTML=fert.value==="org"
+ ?"Vermicompost, Neem cake"
+ :"NPK, Calcium nitrate";
+};
+
+env.onchange=()=>{
+ const d={
+  north:"Cool winters",
+  south:"Warm & humid climate",
+  east:"High rainfall",
+  west:"Dry with irrigation"
+ };
+ envOut.style.display="block";
+ envOut.innerHTML=d[env.value];
+};
+
+market.onchange=()=>{
+ marketOut.style.display="block";
+ marketOut.innerHTML=
+ market.value==="now"
+ ?"₹60–200 per kg"
+ :"High price volatility";
+};
+
+function defaultSchedule(){
+ scheduleOut.style.display="block";
+ scheduleOut.innerHTML=
+ "<ul><li>Nursery – 30 days</li><li>Flowering – 50 days</li><li>Harvest – 120 days</li></ul>";
+}
+
+function setAlarm(){
+ if(alarm.value){
+  let d=new Date(alarm.value)-new Date();
+  if(d>0)setTimeout(()=>alert("⏰ Chili Reminder: "+stage.value),d);
+ }
+}
+</script>
+</body>
+</html>
+

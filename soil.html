@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Soil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: green;
+      margin: 15px 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      padding: 12px 20px;
+    }
+
+    .nav-left {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-left a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .nav-left a.red {
+      background: #c0392b;
+    }
+
+    .nav-left a.black {
+      background: #2c3e50;
+    }
+
+    .logout-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .logout-btn:hover {
+      background: #c0392b;
+    }
+
+    /* Main container */
+    .main {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      flex-wrap: wrap;
+    }
+
+    .soil-card {
+      background: #ffffff;
+      width: 45%;
+      min-width: 280px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .soil-card h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .soil-card p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .soil-card ul {
+      padding-left: 20px;
+    }
+
+    .soil-card ul li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SMART FARMING</h1>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="red.html" class="red">Red Soil</a>
+      <a href="black.html" class="black">Black Soil</a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Soil Information -->
+  <div class="main">
+
+    <!-- Red Soil -->
+    <div class="soil-card">
+      <h2>Red Soil</h2>
+      <p>
+        Red soil is rich in iron and gives a reddish appearance.
+        It is commonly found in southern and eastern parts of India.
+      </p>
+      <ul>
+        <li>Good drainage capacity</li>
+        <li>Low nitrogen content</li>
+        <li>Suitable for dry farming</li>
+        <li>Needs organic fertilizers</li>
+      </ul>
+    </div>
+
+    <!-- Black Soil -->
+    <div class="soil-card">
+      <h2>Black Soil</h2>
+      <p>
+        Black soil is also known as Regur soil and is rich in clay.
+        It retains moisture for a long time.
+      </p>
+      <ul>
+        <li>High moisture retention</li>
+        <li>Rich in calcium & magnesium</li>
+        <li>Sticky when wet</li>
+        <li>Cracks during dry season</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Logout Script -->
+  <script>
+    function logout() {
+      alert("✅ Successfully Logged Out");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
+

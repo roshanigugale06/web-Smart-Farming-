@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Red Soil - Best Crops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: green;
+      margin: 15px 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #c0392b;
+      margin-bottom: 20px;
+    }
+
+    /* MAIN ROW */
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      padding: 30px;
+      justify-content: center;
+    }
+
+    .crop-card {
+      background: #ffffff;
+      width: 33.33%;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .high { border-top: 6px solid #27ae60; }
+    .medium { border-top: 6px solid #f39c12; }
+    .low { border-top: 6px solid #e74c3c; }
+
+    .crop-card h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .crop-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: white;
+    }
+
+    .tag.high { background: #27ae60; }
+    .tag.medium { background: #f39c12; }
+    .tag.low { background: #e74c3c; }
+
+    /* BACK BUTTON */
+    .back-btn {
+      display: block;
+      margin: 10px auto 30px;
+      padding: 10px 22px;
+      background: #c0392b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      width: fit-content;
+      text-align: center;
+    }
+
+    .back-btn:hover {
+      background: #922b21;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SMART FARMING</h1>
+  <h2>Red Soil – Crop Suitability</h2>
+
+  <div class="container">
+
+    <!-- High -->
+    <div class="crop-card high">
+      <span class="tag high">High Suitable</span>
+      <h3>Rice</h3>
+      <p>Rice grows well in red soil with proper irrigation and fertilizers.</p>
+    </div>
+
+    <!-- Medium -->
+    <div class="crop-card medium">
+      <span class="tag medium">Medium Suitable</span>
+      <h3>Mango</h3>
+      <p>Mango grows well with good drainage and moderate irrigation.</p>
+    </div>
+
+    <!-- Low -->
+    <div class="crop-card low">
+      <span class="tag low">Low Suitable</span>
+      <h3>Tomato</h3>
+      <p>Tomato grows but yield is low due to poor moisture retention.</p>
+    </div>
+
+  </div>
+
+  <!-- Back Button -->
+  <a href="soil.html" class="back-btn">⬅ Back to Soil</a>
+
+</body>
+</html>
+
